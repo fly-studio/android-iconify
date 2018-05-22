@@ -15,7 +15,7 @@ repositories {
 	...
 }
 dependencies {
-    implementation 'com.fly.iconify:iconify-fontawesome:1.0.0' // (Font Awesome v5.0.13)
+    implementation 'com.fly.iconify:iconify-fontawesome:1.0.0' // Font Awesome
 }
 ```
 
@@ -26,11 +26,12 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        // add this code to onCreate in Application or Activity
         Iconify
-            .with(new FontAwesomeModule()) // solid FontAwesome v5.0.13
-            .with(new FontAwesomeLightModule()) // light FontAwesome v5.0.13
-            .with(new FontAwesomeBrandsModule()) // brands FontAwesome v5.0.13
-            .with(new FontAwesomeRegularIcons()); // regular FontAwesome v5.0.13
+            .with(new FontAwesomeModule()) // default FontAwesome
+            .with(new FontAwesomeLightModule()) // if you need light FontAwesome
+            .with(new FontAwesomeBrandsModule()) // if you need brands FontAwesome
+            .with(new FontAwesomeRegularIcons()); // if you need regular FontAwesome
     }
 }
 ```
@@ -39,16 +40,16 @@ public class App extends Application {
 
 If you need to put an icon on a ```TextView``` or a ```Button```, use the ```{ }``` syntax. The icons act exactly like the text, so you can apply shadow, size and color on them!
 
-- fa-*
+- {fa-*}
 
 	`FontAwesomeModule`
-- fab-*
+- {fab-*}
 
 	`FontAwesomeBrandsModule`
-- fal-*
+- {fal-*}
 
 	`FontAwesomeLightModule`
-- far-*
+- {far-*}
 
 
 	`FontAwesomeRegularIcons`
@@ -63,7 +64,15 @@ If you need to put an icon on a ```TextView``` or a ```Button```, use the ```{ }
     android:textSize="40sp"
     android:textColor="#FF..."
     ... />
+
+<com.fly.iconify.widget.IconButton
+    .../>
+
+<com.fly.iconify.widget.IconToggleButton
+    .../>
 ```
+
+
 
 <img src="graphics/androids.png" height="347">
 
@@ -96,7 +105,7 @@ There are no constraints on the icon keys, but I strongly suggest you use a uniq
 The only dependency you need if you want to use a custom icon is Iconify core.
 
 ```gradle
-implementation 'com.fly.iconify:iconify:2.2.2'
+implementation 'com.fly.iconify:iconify:1.0.0'
 ```
 
 -----
